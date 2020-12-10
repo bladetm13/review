@@ -85,6 +85,16 @@ export default {
       }
     },
     closeSelectedCards() {
+      // todo: оце дуже і дуже погано
+      // 1. якщо тобі пторібен dom-елемент,
+      //    і інакше ніяк не можна обійтись
+      //    треба використовувати `vue ref`
+      //    а не document.query* чи document.getElement*
+      // 2. в цьому випадку об'єкту карточки треба було
+      //    додати поле `isShown`, і в темплейті прописати
+      //    щось типу:
+      //    :style="{display: card.isShown ? 'block' : 'none'}"
+      //    або використати директиву v-if або v-show
       const first = document.getElementById(this.firstSelectedCard.id);
       const second = document.getElementById(this.secondSelectedCard.id);
       setTimeout(() => {

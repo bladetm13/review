@@ -8,11 +8,12 @@ import { mapMutations } from 'vuex';
 export default {
   name: 'ResetButton',
   methods: {
-    ...mapMutations({
-      restoreSteps: 'restoreSteps',
-      setDefaultTime: 'setDefaultTime',
-      resetCardsWithNumbers: 'resetCardsWithNumbers',
-    }),
+    // todo: використовувати масив трошки простіше
+    ...mapMutations([
+      'restoreSteps',
+      'setDefaultTime',
+      'resetCardsWithNumbers',
+    ]),
     resetGame() {
       this.restoreSteps();
       this.setDefaultTime();
